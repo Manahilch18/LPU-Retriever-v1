@@ -19,10 +19,9 @@ EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 VECTOR_DB_PATH = "vectorstore/db_faiss"
 DATA_PATH = "data/"
 GROQ_MODELS = [
-    "llama-3.3-70b-versatile", 
-    "llama-3-70b-8192", 
-    "llama-3-8b-8192", 
-    "mixtral-8x7b-32768"
+    "llama-3.3-70b-versatile"
+    
+     
 ]
 
 # Elegant Dark CSS matching the design requirements
