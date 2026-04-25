@@ -2,7 +2,6 @@ import os
 import shutil
 import gradio as gr
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
@@ -74,7 +73,7 @@ h1 {
 class RAGBot:
     def __init__(self):
         # Explicitly set cache folder for persistence in some environments
-        self.embeddings = HuggingFaceEmbeddings(model_name=sentence-transformers/all-MiniLM-L6-v2)
+        self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         self.vector_store = None
         
     def get_llm(self, model_name):
