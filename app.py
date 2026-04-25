@@ -1,16 +1,22 @@
 import os
-import shutil
 import gradio as gr
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-from langchain_groq import ChatGroq
-from langchain.chains.retrieval import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+# 1. CHAIN LOGIC (Moved to Classic)
+from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+
+# 2. CORE UTILITIES (Stayed in Core)
+from langchain_core.prompts import ChatPromptTemplate
+
+# 3. COMMUNITY INTEGRATIONS (FAISS, Loaders)
+from langchain_community.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
+
+# 4. SPECIALIZED PACKAGES (Modern Modular Design)
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_groq import ChatGroq
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 # Load environment variables
 load_dotenv()
 
