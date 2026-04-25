@@ -181,7 +181,7 @@ def handle_upload(files):
     return bot.ingest_documents()
 
 with gr.Blocks(theme=gr.themes.Default(primary_hue="blue", secondary_hue="gray"), css=CUSTOM_CSS) as demo:
-    with gr.Div(elem_id="header-info"):
+     with gr.Group(elem_id="header-info"):
         with gr.Row():
             with gr.Column(scale=3):
                 gr.Markdown("# RAG Engineering Blueprint")
@@ -226,5 +226,9 @@ with gr.Blocks(theme=gr.themes.Default(primary_hue="blue", secondary_hue="gray")
                     - **Persistence**: Local serialization in `/vectorstore`
                     """)
 
-if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=3000)
+ if __name__ == "__main__":
+    demo.launch(
+        theme=gr.themes.Default(primary_hue="blue", secondary_hue="gray"),
+        css=CUSTOM_CSS,
+        share=True
+    )
